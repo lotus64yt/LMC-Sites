@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react"
 import Features from "./features";
 import avis from "@/config/avis.json";
+import { motion } from "framer-motion";
 
 interface IAvis {
     icon: string;
@@ -94,14 +95,14 @@ export default () => {
                         alt="LMC Bot Logo" />
                 </div>
             </div>
-            <div className="grid grid-cols-3 gap-9">
-                <p className="max-w-[325px] flex-wrap">
+            <div className="flex gap-4 flex-wrap">
+                <p className="max-w-[300px] flex-wrap">
                     <strong>Des produits frais et de qualité</strong>{"\n\n"}Chez La Baraka, nous mettons un point d'honneur à utiliser des produits frais et de qualité. Nos viandes sont sélectionnées avec soin et proviennent de fournisseurs locaux. Nos légumes sont frais et croquants, et nos pains sont préparés chaque jour par un boulanger artisanal.
                 </p>
-                <p className="max-w-[325px] flex-wrap">
+                <p className="max-w-[300px] flex-wrap">
                     <strong>Un large choix de kebabs</strong>{"\n\n"}Que vous soyez un amateur de viande de veau, d'agneau ou de poulet, vous trouverez chez La Baraka le kebab qui vous correspond. Nous proposons également une large variété de sauces et de crudités pour agrémenter votre sandwich.
                 </p>
-                <p className="max-w-[325px] flex-warp">
+                <p className="max-w-[300px] flex-warp">
                     <strong>Un service rapide et souriant</strong>{"\n\n"}Notre équipe est dynamique et souriante et met tout en œuvre pour vous garantir un service rapide et efficace. Vous pouvez déguster votre kebab sur place dans notre restaurant chaleureux ou le commander à emporter.
                 </p>
             </div>
