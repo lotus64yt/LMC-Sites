@@ -4,7 +4,6 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react"
 import Features from "./features";
 import avis from "@/config/avis.json";
-import { motion } from "framer-motion";
 
 interface IAvis {
     icon: string;
