@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react"
 import Features from "./features";
 import avis from "@/config/avis.json";
+import { motion } from "framer-motion";
 
 interface IAvis {
     icon: string;
@@ -57,30 +58,16 @@ const Container = ({
 
 export default () => {
     const [index, setIndex] = useState(0);
-    const [array, setArray] = useState<IAvis[]>([]);
-    const [current, setCurrent] = useState<IAvis>({
-        "message": "test",
-        "note": 4,
-        "icon": "https://lh3.googleusercontent.com/a-/ALV-UjUwwnEJx0Gt0rdH18NvRcAEIHg8b6qDM4Rqyy5hC5PImzs=w90-h90-p-rp-mo-br100",
-        "username": "Oussama Amar"
-    })
+    const [array, setArray] = useState<IAvis[]>(avis);
 
     useEffect(() => {
         const interval = setInterval(() => {
             setIndex((prevIndex) => (prevIndex + 1) % array.length);
-            setCurrent(avis[index])
         }, 5000);
 
         return () => clearInterval(interval);
     }, [array]);
 
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            setArray(avis);
-        }, 1000);
-
-        return () => clearTimeout(timeout);
-    }, []);
 
     const mapsHref = () => {
         window.open('https://www.google.com/maps/place//data=!4m2!3m1!1s0x47e6bf0e4b0f6ef3:0xeae8619b4c51b627?source=g.page.m._')
@@ -149,15 +136,10 @@ export default () => {
             </Container>
 
             <Container id="avis" title="Les avis">
-                <div
-                        //className={`item ${index === i ? "active" : ""}`}
-                        style={{
-                            transition: "opacity 0.5s ease-in-out",
-                            //opacity: index === i ? 1 : 0,
-                        }}
-                    >
-                        <Avis data={current}/>
-                    </div>
+                <div className="container flew-wrap">
+                    <Avis data={array[index]} />
+
+                </div>
             </Container>
         </main>
     )
