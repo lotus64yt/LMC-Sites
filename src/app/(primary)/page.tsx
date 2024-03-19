@@ -94,7 +94,7 @@ export default () => {
                         alt="LMC Bot Logo" />
                 </div>
             </div>
-            <div className="flex gap-4 flex-wrap">
+            <div className="flex justify-center gap-4 flex-wrap">
                 <p className="max-w-[300px] flex-wrap">
                     <strong>Des produits frais et de qualité</strong>{"\n\n"}Chez La Baraka, nous mettons un point d'honneur à utiliser des produits frais et de qualité. Nos viandes sont sélectionnées avec soin et proviennent de fournisseurs locaux. Nos légumes sont frais et croquants, et nos pains sont préparés chaque jour par un boulanger artisanal.
                 </p>
